@@ -1,50 +1,41 @@
 <template>
-  <div class="charts-page">
-    <div class="row my-test-tab-4">
+  <div class="my-test-tab-4">
+    <div class="row">
       <div class="col-md-6">
-        <vuestic-widget class="chart-widget" :headerText="'charts.verticalBarChart' | translate">
-          123
+        <vuestic-widget class="chart-widget" :headerText="'charts.pieChart' | translate">
+          <vuestic-chart :data="pieChartData" type="pie"></vuestic-chart>
         </vuestic-widget>
       </div>
       <div class="col-md-6">
-        <vuestic-widget class="chart-widget" :headerText="'charts.horizontalBarChart' | translate">
-          456
+        <vuestic-widget class="chart-widget" :headerText="'charts.donutChart' | translate">
+          <vuestic-chart v-bind:data="donutChartData" type="donut"></vuestic-chart>
         </vuestic-widget>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4">
-        <vuestic-widget class="chart-widget" :headerText="'charts.horizontalBarChart' | translate">
-          <vuestic-chart v-bind:data="horizontalBarChartData" type="horizontal-bar"></vuestic-chart>
-        </vuestic-widget>
-      </div>
-      <div class="col-md-4">
-        <vuestic-widget class="chart-widget" :headerText="'charts.horizontalBarChart' | translate">
-          <vuestic-chart v-bind:data="horizontalBarChartData" type="horizontal-bar"></vuestic-chart>
-        </vuestic-widget>
-      </div>
-      <div class="col-md-4">
-        <vuestic-widget class="chart-widget" :headerText="'charts.horizontalBarChart' | translate">
-          <vuestic-chart v-bind:data="horizontalBarChartData" type="horizontal-bar"></vuestic-chart>
+      <div class="col-md-12">
+        <vuestic-widget class="chart-widget" :headerText="'charts.bubbleChart' | translate">
+          <vuestic-chart v-bind:data="bubbleChartData" type="bubble"></vuestic-chart>
         </vuestic-widget>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-  import VerticalBarChartData from 'data/charts/VerticalBarChartData'
-  import HorizontalBarChartData from 'data/charts/HorizontalBarChartData'
+  import BubbleChartData from 'data/charts/BubbleChartData'
+  import PieChartData from 'data/charts/PieChartData'
+  import DonutChartData from 'data/charts/DonutChartData'
 
   export default {
     name: 'my-test-tab-4',
 
     data: function () {
       return {
-        verticalBarChartData: VerticalBarChartData,
-        horizontalBarChartData: HorizontalBarChartData
+        bubbleChartData: BubbleChartData,
+        pieChartData: PieChartData,
+        donutChartData: DonutChartData
       }
     }
   }
