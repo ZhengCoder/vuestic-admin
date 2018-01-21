@@ -3,8 +3,7 @@
     <sidebar></sidebar>
     <div class="content-wrap" id="content-wrap">
       <main id="content" class="content" role="main">
-        <vuestic-pre-loader v-show="!isLoading" ref="preLoader" class="pre-loader"></vuestic-pre-loader>
-        <router-view v-show="isLoading"></router-view>
+        <router-view></router-view>
       </main>
     </div>
   </div>
@@ -28,8 +27,7 @@
     computed: {
       ...mapGetters([
         'sidebarOpened',
-        'toggleWithoutAnimation',
-        'isLoading'
+        'toggleWithoutAnimation'
       ]),
       classObject: function () {
         return {
