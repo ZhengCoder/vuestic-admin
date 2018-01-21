@@ -13,7 +13,8 @@
     <!--<dashboard-info-widgets></dashboard-info-widgets>-->
 
     <vuestic-widget class="no-padding no-v-padding full-screen">
-      <vuestic-tabs :names="[$t('dashboard.myTestTab1'), $t('dashboard.myTestTab2'), $t('dashboard.myTestTab3'),
+      <vuestic-tabs :names="[$t('dashboard.myTestTab1'), $t('dashboard.myTestTab2'),
+        $t('dashboard.myTestTab3'), $t('dashboard.myTestTab4'),
         $t('dashboard.dataVisualization'), $t('dashboard.usersAndMembers'),
         $t('dashboard.setupProfile'), $t('dashboard.features')]"
         ref="tabs">
@@ -38,6 +39,9 @@
         <div :slot="$t('dashboard.myTestTab3')">
           <my-test-tab-3></my-test-tab-3>
         </div>
+        <div :slot="$t('dashboard.myTestTab4')">
+          <my-test-tab-4></my-test-tab-4>
+        </div>
       </vuestic-tabs>
     </vuestic-widget>
 
@@ -56,6 +60,7 @@
   import MyTestTab from './MyTestTab.vue'
   import MyTestTab2 from './MyTestTab2.vue'
   import MyTestTab3 from './MyTestTab3.vue'
+  import MyTestTab4 from './MyTestTab4.vue'
 
   export default {
     name: 'dashboard',
@@ -68,7 +73,8 @@
       DashboardBottomWidgets,
       MyTestTab,
       MyTestTab2,
-      MyTestTab3
+      MyTestTab3,
+      MyTestTab4
     }
   }
 </script>
