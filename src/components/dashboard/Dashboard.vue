@@ -13,7 +13,10 @@
     <!--<dashboard-info-widgets></dashboard-info-widgets>-->
 
     <vuestic-widget class="no-padding no-v-padding full-screen">
-      <vuestic-tabs :names="[$t('dashboard.dataVisualization'), $t('dashboard.usersAndMembers'), $t('dashboard.setupProfile'), $t('dashboard.features'), $t('dashboard.myTestTab1')]" ref="tabs">
+      <vuestic-tabs :names="[$t('dashboard.dataVisualization'), $t('dashboard.usersAndMembers'),
+        $t('dashboard.setupProfile'), $t('dashboard.features'),
+        $t('dashboard.myTestTab1'), $t('dashboard.myTestTab2')]"
+        ref="tabs">
         <div :slot="$t('dashboard.dataVisualization')">
           <data-visualisation-tab></data-visualisation-tab>
         </div>
@@ -27,9 +30,10 @@
           <features-tab></features-tab>
         </div>
         <div :slot="$t('dashboard.myTestTab1')">
-          <features-tab></features-tab>
-          <dashboard-bottom-widgets></dashboard-bottom-widgets>
           <my-test-tab></my-test-tab>
+        </div>
+        <div :slot="$t('dashboard.myTestTab2')">
+          <my-test-tab-2></my-test-tab-2>
         </div>
       </vuestic-tabs>
     </vuestic-widget>
@@ -47,6 +51,7 @@
   import DataVisualisationTab from './data-visualisation-tab/DataVisualisation.vue'
   import DashboardBottomWidgets from './DashboardBottomWidgets.vue'
   import MyTestTab from './MyTestTab.vue'
+  import MyTestTab2 from './MyTestTab2.vue'
 
   export default {
     name: 'dashboard',
@@ -57,7 +62,8 @@
       SetupProfileTab,
       FeaturesTab,
       DashboardBottomWidgets,
-      MyTestTab
+      MyTestTab,
+      MyTestTab2
     }
   }
 </script>
