@@ -1,19 +1,19 @@
 <template>
   <div class="dashboard">
-    <div class="row">
-      <div class="col-md-12">
-        <vuestic-alert type="success" :withCloseBtn="true">
-          <span class="badge badge-pill badge-success">{{'extra.alerts.success' | translate}}</span>
-          {{'extra.alerts.successMessage' | translate}}
-          <i class="fa fa-close alert-close"></i>
-        </vuestic-alert>
-      </div>
-    </div>
+    <!--<div class="row">-->
+      <!--<div class="col-md-12">-->
+        <!--<vuestic-alert type="success" :withCloseBtn="true">-->
+          <!--<span class="badge badge-pill badge-success">{{'extra.alerts.success' | translate}}</span>-->
+          <!--{{'extra.alerts.successMessage' | translate}}-->
+          <!--<i class="fa fa-close alert-close"></i>-->
+        <!--</vuestic-alert>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <dashboard-info-widgets></dashboard-info-widgets>
+    <!--<dashboard-info-widgets></dashboard-info-widgets>-->
 
-    <vuestic-widget class="no-padding no-v-padding">
-      <vuestic-tabs :names="[$t('dashboard.dataVisualization'), $t('dashboard.usersAndMembers'), $t('dashboard.setupProfile'), $t('dashboard.features')]" ref="tabs">
+    <vuestic-widget class="no-padding no-v-padding full-screen">
+      <vuestic-tabs :names="[$t('dashboard.dataVisualization'), $t('dashboard.usersAndMembers'), $t('dashboard.setupProfile'), $t('dashboard.features'), $t('dashboard.myTestTab1')]" ref="tabs">
         <div :slot="$t('dashboard.dataVisualization')">
           <data-visualisation-tab></data-visualisation-tab>
         </div>
@@ -26,10 +26,14 @@
         <div :slot="$t('dashboard.features')">
           <features-tab></features-tab>
         </div>
+        <div :slot="$t('dashboard.myTestTab1')">
+          <features-tab></features-tab>
+          <dashboard-bottom-widgets></dashboard-bottom-widgets>
+        </div>
       </vuestic-tabs>
     </vuestic-widget>
 
-    <dashboard-bottom-widgets></dashboard-bottom-widgets>
+    <!--<dashboard-bottom-widgets></dashboard-bottom-widgets>-->
 
   </div>
 </template>
