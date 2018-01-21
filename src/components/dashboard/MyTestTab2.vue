@@ -19,7 +19,7 @@
 
     data: function () {
       return {
-        lineChartData: LineChartData,
+        lineChartData: LineChartData
       }
     }
   }
