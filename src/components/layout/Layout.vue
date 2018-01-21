@@ -14,7 +14,6 @@
 <script>
   import {mapGetters} from 'vuex'
 
-  import Navbar from './navbar/Navbar'
   import Sidebar from './sidebar/Sidebar'
   import Resize from 'directives/ResizeHandler'
 
@@ -22,7 +21,6 @@
     name: 'layout',
 
     components: {
-      Navbar,
       Sidebar
     },
     directives: {
@@ -36,7 +34,7 @@
       ]),
       classObject: function () {
         return {
-          'sidebar-hidden': !this.toggleWithoutAnimation && !this.sidebarOpened,
+          'sidebar-hidden': true || !this.toggleWithoutAnimation && !this.sidebarOpened,
           'sidebar-hidden sidebar-hidden_without-animation': this.toggleWithoutAnimation && !this.sidebarOpened
         }
       }
