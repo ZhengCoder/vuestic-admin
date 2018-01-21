@@ -29,6 +29,7 @@
         <div :slot="$t('dashboard.myTestTab1')">
           <features-tab></features-tab>
           <dashboard-bottom-widgets></dashboard-bottom-widgets>
+          <my-test-tab></my-test-tab>
         </div>
       </vuestic-tabs>
     </vuestic-widget>
@@ -45,6 +46,7 @@
   import FeaturesTab from './features-tab/FeaturesTab.vue'
   import DataVisualisationTab from './data-visualisation-tab/DataVisualisation.vue'
   import DashboardBottomWidgets from './DashboardBottomWidgets.vue'
+  import MyTestTab from './MyTestTab.vue'
 
   export default {
     name: 'dashboard',
@@ -54,7 +56,8 @@
       UsersMembersTab,
       SetupProfileTab,
       FeaturesTab,
-      DashboardBottomWidgets
+      DashboardBottomWidgets,
+      MyTestTab
     }
   }
 </script>
